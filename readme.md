@@ -14,7 +14,9 @@ _________________________
 
 &nbsp;
 ## Notes
-_Flay_ flays the diacritics and accents off your strings. Flatten all special characters with _Flay_ and rest assured that you'll have no matching conflicts should a special character wind up in your text. _Flay_ features attention to ISO 192-383 and a whole lot more.
+_Flay_ flays the diacritics and accents off your strings. Flatten all special characters with _Flay_ and rest assured that you'll have no matching conflicts should a special character wind up in your text. _Flay_ features attention to ISO 192-383 and a whole lot more. Currently supporting: Afrikaans, Albanian, Azerbaijani, Basque, Bosnian, Catalan, Cebuano, Corsican, Croatian, Czech, Danish, Dutch, Eastern Frisian, \*English, Esperanto, Estonian, Filipino, Finnish, French, Gaelic, Galician, German, Haitian Creole, Hausa, Hawaiian, \*Hmong Thoob Teb, Hungarian, Icelandic, Igbo, Italian, Javanese, \*Kinyarwanda, Kurdish, Latvian, Lithuanian, Luxembourgish, Maltese, Maori, North Frisian, Northern Sotho, Norwegian, Polish, Portuguese, Romanian, \*Samoan, Scottish Gaelic, \*Shona, Slovak, Slovenian, \*Somali, Southern Sotho, Spanish, Sundanese, \*Swahili, Swedish, Tagalog, Turkish, Turkmen, Vietnamese, \*Welsh, Western Frisian, Xhosa, Yoruba, \*Zulu
+
+\*No regular diacritical marks
 
 ## Installation
 With [npm](http://npmjs.org) do
