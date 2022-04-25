@@ -1,4 +1,5 @@
-module.exports = string => { //Flattens all diacritics and special characters ISO 192-383, namely    À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ð Ñ Ò Ó Ô Õ Ö Ø Ù Ú Û Ü Ý Þ ß à á â ã ä å æ ç è é ê ë ì í î ï ð ñ ò ó ô õ ö ø ù ú û ü ý þ ÿ Ā ā Ă ă Ą ą Ć ć Ĉ ĉ Ċ ċ Č č Ď ď Đ đ Ē ē Ĕ ĕ Ė ė Ę ę Ě ě Ĝ ĝ Ğ ğ Ġ ġ Ģ ģ Ĥ ĥ Ħ ħ Ĩ ĩ Ī ī Ĭ ĭ Į į İ ı Ĳ ĳ Ĵ ĵ Ķ ķ ĸ Ĺ ĺ Ļ ļ Ľ ľ Ŀ ŀ Ł ł Ń ń Ņ ņ Ň ň ŉ Ŋ ŋ Ō ō Ŏ ŏ Ő ő Œ œ Ŕ ŕ Ŗ ŗ Ř ř Ś ś Ŝ ŝ Ş ş Š š Ţ ţ Ť ť Ŧ ŧ Ũ ũ Ū ū Ŭ ŭ Ů ů Ű ű Ų ų Ŵ ŵ Ŷ ŷ Ÿ Ź ź Ż ż Ž ž ſ    which can be found at    https://docs.oracle.com/cd/E29584_01/webhelp/mdex_basicDev/src/rbdv_chars_mapping.html    , as well as others which can be found at    https://en.wikipedia.org/wiki/List_of_Unicode_characters    . A special thanks to khel's response in    https://stackoverflow.com/questions/3686020/case-sensitive-accent-folding-in-javascript    . That following have been added to that response: u00D0, u0132, u014A, u0152, u00DE, u0133, u0138, u014B, u0153, u00F0, u00FE, u0259, u018F
+module.exports = string => { //Flattens all diacritics and special characters ISO 192-383, namely    À Á Â Ã Ä Å Æ Ç È É Ê Ë Ì Í Î Ï Ð Ñ Ò Ó Ô Õ Ö Ø Ù Ú Û Ü Ý Þ ß à á â ã ä å æ ç è é ê ë ì í î ï ð ñ ò ó ô õ ö ø ù ú û ü ý þ ÿ Ā ā Ă ă Ą ą Ć ć Ĉ ĉ Ċ ċ Č č Ď ď Đ đ Ē ē Ĕ ĕ Ė ė Ę ę Ě ě Ĝ ĝ Ğ ğ Ġ ġ Ģ ģ Ĥ ĥ Ħ ħ Ĩ ĩ Ī ī Ĭ ĭ Į į İ ı Ĳ ĳ Ĵ ĵ Ķ ķ ĸ Ĺ ĺ Ļ ļ Ľ ľ Ŀ ŀ Ł ł Ń ń Ņ ņ Ň ň ŉ Ŋ ŋ Ō ō Ŏ ŏ Ő ő Œ œ Ŕ ŕ Ŗ ŗ Ř ř Ś ś Ŝ ŝ Ş ş Š š Ţ ţ Ť ť Ŧ ŧ Ũ ũ Ū ū Ŭ ŭ Ů ů Ű ű Ų ų Ŵ ŵ Ŷ ŷ Ÿ Ź ź Ż ż Ž ž ſ    which can be found at    https://docs.oracle.com/cd/E29584_01/webhelp/mdex_basicDev/src/rbdv_chars_mapping.html    , as well as others which can be found at    https://en.wikipedia.org/wiki/List_of_Unicode_characters    . A special thanks to khel's response in    https://stackoverflow.com/questions/3686020/case-sensitive-accent-folding-in-javascript    . The following have been added to that response: Ð ð Ĳ ĳ Þ þ Ŋ ŋ œ Ə ə Œ ĸ
+
 
     if (string === undefined) { //Need to specify    string === undefined    rather than    !string    because the latter includes empty strings and we want to be able to differentiate between    string === ''    and    string === undefined    , and    typeof(string) !== 'string'    will capture    string === null   so    !string    would just cause harm here
         return 'Your input is undefined.'
@@ -28,7 +29,8 @@ module.exports = string => { //Flattens all diacritics and special characters IS
         { flayed:'F', rawMatch: /[\u0046\u24BB\uFF26\u1E1E\u0191\uA77B]/g },
         { flayed:'G', rawMatch: /[\u0047\u24BC\uFF27\u01F4\u011C\u1E20\u011E\u0120\u01E6\u0122\u01E4\u0193\uA7A0\uA77D\uA77E]/g },
         { flayed:'H', rawMatch: /[\u0048\u24BD\uFF28\u0124\u1E22\u1E26\u021E\u1E24\u1E28\u1E2A\u0126\u2C67\u2C75\uA78D]/g },
-        { flayed:'I', rawMatch: /[\u0049\u24BE\uFF29\u00CC\u00CD\u00CE\u0128\u012A\u012C\u0130\u00CF\u1E2E\u1EC8\u01CF\u0208\u020A\u1ECA\u012E\u1E2C\u0197\u0132]/g },
+        { flayed:'I', rawMatch: /[\u0049\u24BE\uFF29\u00CC\u00CD\u00CE\u0128\u012A\u012C\u0130\u00CF\u1E2E\u1EC8\u01CF\u0208\u020A\u1ECA\u012E\u1E2C\u0197]/g },
+        { flayed: 'IJ', rawMatch: /[\u0132]/g },
         { flayed:'J', rawMatch: /[\u004A\u24BF\uFF2A\u0134\u0248]/g },
         { flayed:'K', rawMatch: /[\u004B\u24C0\uFF2B\u1E30\u01E8\u1E32\u0136\u1E34\u0198\u2C69\uA740\uA742\uA744\uA7A2]/g },
         { flayed:'L', rawMatch: /[\u004C\u24C1\uFF2C\u013F\u0139\u013D\u1E36\u1E38\u013B\u1E3C\u1E3A\u0141\u023D\u2C62\u2C60\uA748\uA746\uA780]/g },
@@ -38,7 +40,8 @@ module.exports = string => { //Flattens all diacritics and special characters IS
         { flayed:'N', rawMatch: /[\u004E\u24C3\uFF2E\u01F8\u0143\u00D1\u1E44\u0147\u1E46\u0145\u1E4A\u1E48\u0220\u019D\uA790\uA7A4\u014a]/g },
         { flayed:'NJ', rawMatch: /[\u01CA]/g },
         { flayed:'Nj', rawMatch: /[\u01CB]/g },
-        { flayed:'O', rawMatch: /[\u004F\u24C4\uFF2F\u00D2\u00D3\u00D4\u1ED2\u1ED0\u1ED6\u1ED4\u00D5\u1E4C\u022C\u1E4E\u014C\u1E50\u1E52\u014E\u022E\u0230\u00D6\u022A\u1ECE\u0150\u01D1\u020C\u020E\u01A0\u1EDC\u1EDA\u1EE0\u1EDE\u1EE2\u1ECC\u1ED8\u01EA\u01EC\u00D8\u01FE\u0186\u019F\uA74A\uA74C\u0152]/g },
+        { flayed:'O', rawMatch: /[\u004F\u24C4\uFF2F\u00D2\u00D3\u00D4\u1ED2\u1ED0\u1ED6\u1ED4\u00D5\u1E4C\u022C\u1E4E\u014C\u1E50\u1E52\u014E\u022E\u0230\u00D6\u022A\u1ECE\u0150\u01D1\u020C\u020E\u01A0\u1EDC\u1EDA\u1EE0\u1EDE\u1EE2\u1ECC\u1ED8\u01EA\u01EC\u00D8\u01FE\u0186\u019F\uA74A\uA74C]/g },
+        { flayed:'OE', rawMatch: /[\u0152]/g },
         { flayed:'OI', rawMatch: /[\u01A2]/g },
         { flayed:'OO', rawMatch: /[\uA74E]/g },
         { flayed:'OU', rawMatch: /[\u0222]/g },
@@ -71,7 +74,8 @@ module.exports = string => { //Flattens all diacritics and special characters IS
         { flayed:'g', rawMatch: /[\u0067\u24D6\uFF47\u01F5\u011D\u1E21\u011F\u0121\u01E7\u0123\u01E5\u0260\uA7A1\u1D79\uA77F]/g },
         { flayed:'h', rawMatch: /[\u0068\u24D7\uFF48\u0125\u1E23\u1E27\u021F\u1E25\u1E29\u1E2B\u1E96\u0127\u2C68\u2C76\u0265]/g },
         { flayed:'hv', rawMatch: /[\u0195]/g },
-        { flayed:'i', rawMatch: /[\u0069\u24D8\uFF49\u00EC\u00ED\u00EE\u0129\u012B\u012D\u00EF\u1E2F\u1EC9\u01D0\u0209\u020B\u1ECB\u012F\u1E2D\u0268\u0131\u0133]/g },
+        { flayed:'i', rawMatch: /[\u0069\u24D8\uFF49\u00EC\u00ED\u00EE\u0129\u012B\u012D\u00EF\u1E2F\u1EC9\u01D0\u0209\u020B\u1ECB\u012F\u1E2D\u0268\u0131]/g },
+        { flayed: 'ij', rawMatch: /[\u0133]/g },
         { flayed:'j', rawMatch: /[\u006A\u24D9\uFF4A\u0135\u01F0\u0249]/g },
         { flayed:'k', rawMatch: /[\u006B\u24DA\uFF4B\u1E31\u01E9\u1E33\u0137\u1E35\u0199\u2C6A\uA741\uA743\uA745\uA7A3\u0138]/g },
         { flayed:'l', rawMatch: /[\u006C\u24DB\uFF4C\u0140\u013A\u013E\u1E37\u1E39\u013C\u1E3D\u1E3B\u017F\u0142\u019A\u026B\u2C61\uA749\uA781\uA747]/g },
@@ -79,7 +83,8 @@ module.exports = string => { //Flattens all diacritics and special characters IS
         { flayed:'m', rawMatch: /[\u006D\u24DC\uFF4D\u1E3F\u1E41\u1E43\u0271\u026F]/g },
         { flayed:'n', rawMatch: /[\u006E\u24DD\uFF4E\u01F9\u0144\u00F1\u1E45\u0148\u1E47\u0146\u1E4B\u1E49\u019E\u0272\u0149\uA791\uA7A5\u014b]/g },
         { flayed:'nj', rawMatch: /[\u01CC]/g },
-        { flayed:'o', rawMatch: /[\u006F\u24DE\uFF4F\u00F2\u00F3\u00F4\u1ED3\u1ED1\u1ED7\u1ED5\u00F5\u1E4D\u022D\u1E4F\u014D\u1E51\u1E53\u014F\u022F\u0231\u00F6\u022B\u1ECF\u0151\u01D2\u020D\u020F\u01A1\u1EDD\u1EDB\u1EE1\u1EDF\u1EE3\u1ECD\u1ED9\u01EB\u01ED\u00F8\u01FF\u0254\uA74B\uA74D\u0275\u0153\u00F0]/g },
+        { flayed:'o', rawMatch: /[\u006F\u24DE\uFF4F\u00F2\u00F3\u00F4\u1ED3\u1ED1\u1ED7\u1ED5\u00F5\u1E4D\u022D\u1E4F\u014D\u1E51\u1E53\u014F\u022F\u0231\u00F6\u022B\u1ECF\u0151\u01D2\u020D\u020F\u01A1\u1EDD\u1EDB\u1EE1\u1EDF\u1EE3\u1ECD\u1ED9\u01EB\u01ED\u00F8\u01FF\u0254\uA74B\uA74D\u0275\u00F0]/g },
+        { flayed:'oe', rawMatch: /[\u0153]/g },
         { flayed:'oi', rawMatch: /[\u01A3]/g },
         { flayed:'ou', rawMatch: /[\u0223]/g },
         { flayed:'oo', rawMatch: /[\uA74F]/g },
