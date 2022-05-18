@@ -15,5 +15,13 @@
     "normalize"
   ],
   "author": "David H.",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvho/flay.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dvho/flay/issues"
+  },
+  "homepage": "https://github.com/dvho/flay#readme"
 }
