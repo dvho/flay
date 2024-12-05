@@ -1,8 +1,16 @@
 {
   "name": "flay",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Flay the diacritics and accents off special characters with Flay. Say goodbye to character matching conflicts for good.",
   "main": "flay.js",
+  "files": [
+    "package.json",
+    "flay.js",
+    "flay.test.js",
+    "demos.md",
+    "example_text.js",
+    "readme.md"
+  ],
   "scripts": {
     "test": "node flay.test.js",
     "prepublishOnly": "npm test"
